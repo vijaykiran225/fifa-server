@@ -17,8 +17,8 @@ public class EsResponseFifa17Mapper {
                     player.setName(aRecord.getSource().getName());
                     player.setClub(aRecord.getSource().getClub());
                     player.setNationality(aRecord.getSource().getNationality());
-                    player.setClubKit(aRecord.getSource().getClubKit());
-                    player.setNationalKit(aRecord.getSource().getNationalKit());
+                    player.setClubKit(Long.valueOf(aRecord.getSource().getClub_Kit()));
+                    player.setSpeed((aRecord.getSource().getSpeed()));
                     return player;  
                 })
                 .findFirst();

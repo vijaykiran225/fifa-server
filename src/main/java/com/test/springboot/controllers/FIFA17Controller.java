@@ -22,7 +22,7 @@ public class FIFA17Controller {
 
     @GET
     @Path("/{id}")
-    @Produces("text/plain")
+    @Produces("application/json")
     public Fifa17Player helloWorld(@PathParam("id") String id) throws ConfigurationException {
         Response resp = elasticService.readData(id);
         ElasticResponse elasticData = processResponse(resp, ElasticResponse.class);

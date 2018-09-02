@@ -1,236 +1,594 @@
+
 package com.test.springboot.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+/**
+ * map
+ */
 public class Source {
-    private String composure;
-    private String nationality;
+
+    @JsonProperty("Composure")
+    private String Composure;
+    @JsonProperty("Nationality")
+    private String Nationality;
+    @JsonProperty("@timestamp")
     private String timestamp;
-    private long shotPower;
-    private long skillMoves;
-    private long freekickAccuracy;
-    private long gkPositioning;
-    private String reactions;
-    private String height;
-    private String weight;
-    private String interceptions;
-    private long vision;
-    private String name;
-    private String attackingPosition;
-    private String balance;
-    private String strength;
-    private Object nationalPosition;
-    private String gkReflexes;
-    private String gkHandling;
+    @JsonProperty("Shot_Power")
+    private String Shot_Power;
+    @JsonProperty("Skill_Moves")
+    private String Skill_Moves;
+    @JsonProperty("Freekick_Accuracy")
+    private String Freekick_Accuracy;
+    @JsonProperty("GK_Positioning")
+    private String GK_Positioning;
+    @JsonProperty("Reactions")
+    private String Reactions;
+    @JsonProperty("Height")
+    private String Height;
+    @JsonProperty("Weight")
+    private String Weight;
+    @JsonProperty("Interceptions")
+    private String Interceptions;
+    @JsonProperty("Vision")
+    private String Vision;
+    @JsonProperty("Name")
+    private String Name;
+    @JsonProperty("Attacking_Position")
+    private String Attacking_Position;
+    @JsonProperty("Balance")
+    private String Balance;
+    @JsonProperty("Strength")
+    private String Strength;
+    @JsonProperty("National_Position")
+    private String National_Position;
+    @JsonProperty("GK_Reflexes")
+    private String GK_Reflexes;
+    @JsonProperty("GK_Handling")
+    private String GK_Handling;
+    @JsonProperty("path")
     private String path;
-    private long clubKit;
-    private long volleys;
-    private long penalties;
-    private String birthDate;
-    private String gkDiving;
-    private String dribbling;
-    private long standingTackle;
-    private Long nationalKit;
-    private long acceleration;
-    private long shortPass;
-    private String aggression;
-    private long ballControl;
-    private long longPass;
-    private String workRate;
-    private String club;
-    private String prefferedFoot;
-    private String agility;
-    private String clubJoining;
-    private long finishing;
-    private long curve;
-    private String slidingTackle;
+    @JsonProperty("Club_Kit")
+    private String Club_Kit;
+    @JsonProperty("Volleys")
+    private String Volleys;
+    @JsonProperty("Penalties")
+    private String Penalties;
+    @JsonProperty("Birth_Date")
+    private String Birth_Date;
+    @JsonProperty("GK_Diving")
+    private String GK_Diving;
+    @JsonProperty("Dribbling")
+    private String Dribbling;
+    @JsonProperty("Standing_Tackle")
+    private String Standing_Tackle;
+    @JsonProperty("National_Kit")
+    private String National_Kit;
+    @JsonProperty("Acceleration")
+    private String Acceleration;
+    @JsonProperty("Short_Pass")
+    private String Short_Pass;
+    @JsonProperty("Aggression")
+    private String Aggression;
+    @JsonProperty("Ball_Control")
+    private String Ball_Control;
+    @JsonProperty("Long_Pass")
+    private String Long_Pass;
+    @JsonProperty("Work_Rate")
+    private String Work_Rate;
+    @JsonProperty("Club")
+    private String Club;
+    @JsonProperty("Preffered_Foot")
+    private String Preffered_Foot;
+    @JsonProperty("Agility")
+    private String Agility;
+    @JsonProperty("Club_Joining")
+    private String Club_Joining;
+    @JsonProperty("Finishing")
+    private String Finishing;
+    @JsonProperty("Curve")
+    private String Curve;
+    @JsonProperty("Sliding_Tackle")
+    private String Sliding_Tackle;
+    @JsonProperty("message")
     private String message;
-    private long speed;
-    private long heading;
-    private String contractExpiry;
-    private long rating;
-    private String marking;
-    private String stamina;
-    private String age;
-    private String gkKicking;
-    private long longShots;
-    private String jumping;
-    private String prefferedPosition;
+    @JsonProperty("Speed")
+    private String Speed;
+    @JsonProperty("Heading")
+    private String Heading;
+    @JsonProperty("Contract_Expiry")
+    private String Contract_Expiry;
+    @JsonProperty("Rating")
+    private String Rating;
+    @JsonProperty("Marking")
+    private String Marking;
+    @JsonProperty("Stamina")
+    private String Stamina;
+    @JsonProperty("Age")
+    private String Age;
+    @JsonProperty("GK_Kicking")
+    private String GK_Kicking;
+    @JsonProperty("Long_Shots")
+    private String Long_Shots;
+    @JsonProperty("Jumping")
+    private String Jumping;
+    @JsonProperty("Preffered_Position")
+    private String Preffered_Position;
+    @JsonProperty("@version") 
     private String version;
+    @JsonProperty("host") 
     private String host;
-    private String clubPosition;
-    private long crossing;
-    private String weakFoot;
+    @JsonProperty("Club_Position")
+    private String Club_Position;
+    @JsonProperty("Crossing")
+    private String Crossing;
+    @JsonProperty("Weak_foot")
+    private String Weak_foot;
 
-    public String getComposure() { return composure; }
-    public void setComposure(String value) { this.composure = value; }
+    public String getComposure() {
+        return this.Composure;
+    }
 
-    public String getNationality() { return nationality; }
-    public void setNationality(String value) { this.nationality = value; }
+    public void setComposure(String Composure) {
+        this.Composure = Composure;
+    }
 
-    public String getTimestamp() { return timestamp; }
-    public void setTimestamp(String value) { this.timestamp = value; }
+    public String getNationality() {
+        return this.Nationality;
+    }
 
-    public long getShotPower() { return shotPower; }
-    public void setShotPower(long value) { this.shotPower = value; }
+    public void setNationality(String Nationality) {
+        this.Nationality = Nationality;
+    }
 
-    public long getSkillMoves() { return skillMoves; }
-    public void setSkillMoves(long value) { this.skillMoves = value; }
+    public String getTimestamp() {
+        return this.timestamp;
+    }
 
-    public long getFreekickAccuracy() { return freekickAccuracy; }
-    public void setFreekickAccuracy(long value) { this.freekickAccuracy = value; }
+    public void setTimestamp(String timestamp) {
+        this.timestamp = timestamp;
+    }
 
-    public long getGkPositioning() { return gkPositioning; }
-    public void setGkPositioning(long value) { this.gkPositioning = value; }
+    public String getShot_Power() {
+        return this.Shot_Power;
+    }
 
-    public String getReactions() { return reactions; }
-    public void setReactions(String value) { this.reactions = value; }
+    public void setShot_Power(String Shot_Power) {
+        this.Shot_Power = Shot_Power;
+    }
 
-    public String getHeight() { return height; }
-    public void setHeight(String value) { this.height = value; }
+    public String getSkill_Moves() {
+        return this.Skill_Moves;
+    }
 
-    public String getWeight() { return weight; }
-    public void setWeight(String value) { this.weight = value; }
+    public void setSkill_Moves(String Skill_Moves) {
+        this.Skill_Moves = Skill_Moves;
+    }
 
-    public String getInterceptions() { return interceptions; }
-    public void setInterceptions(String value) { this.interceptions = value; }
+    public String getFreekick_Accuracy() {
+        return this.Freekick_Accuracy;
+    }
 
-    public long getVision() { return vision; }
-    public void setVision(long value) { this.vision = value; }
+    public void setFreekick_Accuracy(String Freekick_Accuracy) {
+        this.Freekick_Accuracy = Freekick_Accuracy;
+    }
 
-    public String getName() { return name; }
-    public void setName(String value) { this.name = value; }
+    public String getGK_Positioning() {
+        return this.GK_Positioning;
+    }
 
-    public String getAttackingPosition() { return attackingPosition; }
-    public void setAttackingPosition(String value) { this.attackingPosition = value; }
+    public void setGK_Positioning(String GK_Positioning) {
+        this.GK_Positioning = GK_Positioning;
+    }
 
-    public String getBalance() { return balance; }
-    public void setBalance(String value) { this.balance = value; }
+    public String getReactions() {
+        return this.Reactions;
+    }
 
-    public String getStrength() { return strength; }
-    public void setStrength(String value) { this.strength = value; }
+    public void setReactions(String Reactions) {
+        this.Reactions = Reactions;
+    }
 
-    public Object getNationalPosition() { return nationalPosition; }
-    public void setNationalPosition(Object value) { this.nationalPosition = value; }
+    public String getHeight() {
+        return this.Height;
+    }
 
-    public String getGkReflexes() { return gkReflexes; }
-    public void setGkReflexes(String value) { this.gkReflexes = value; }
+    public void setHeight(String Height) {
+        this.Height = Height;
+    }
 
-    public String getGkHandling() { return gkHandling; }
-    public void setGkHandling(String value) { this.gkHandling = value; }
+    public String getWeight() {
+        return this.Weight;
+    }
 
-    public String getPath() { return path; }
-    public void setPath(String value) { this.path = value; }
+    public void setWeight(String Weight) {
+        this.Weight = Weight;
+    }
 
-    public long getClubKit() { return clubKit; }
-    public void setClubKit(long value) { this.clubKit = value; }
+    public String getInterceptions() {
+        return this.Interceptions;
+    }
 
-    public long getVolleys() { return volleys; }
-    public void setVolleys(long value) { this.volleys = value; }
+    public void setInterceptions(String Interceptions) {
+        this.Interceptions = Interceptions;
+    }
 
-    public long getPenalties() { return penalties; }
-    public void setPenalties(long value) { this.penalties = value; }
+    public String getVision() {
+        return this.Vision;
+    }
 
-    public String getBirthDate() { return birthDate; }
-    public void setBirthDate(String value) { this.birthDate = value; }
+    public void setVision(String Vision) {
+        this.Vision = Vision;
+    }
 
-    public String getGkDiving() { return gkDiving; }
-    public void setGkDiving(String value) { this.gkDiving = value; }
+    public String getName() {
+        return this.Name;
+    }
 
-    public String getDribbling() { return dribbling; }
-    public void setDribbling(String value) { this.dribbling = value; }
+    public void setName(String Name) {
+        this.Name = Name;
+    }
 
-    public long getStandingTackle() { return standingTackle; }
-    public void setStandingTackle(long value) { this.standingTackle = value; }
+    public String getAttacking_Position() {
+        return this.Attacking_Position;
+    }
 
-    public Long getNationalKit() { return nationalKit; }
-    public void setNationalKit(Long value) { this.nationalKit = value; }
+    public void setAttacking_Position(String Attacking_Position) {
+        this.Attacking_Position = Attacking_Position;
+    }
 
-    public long getAcceleration() { return acceleration; }
-    public void setAcceleration(long value) { this.acceleration = value; }
+    public String getBalance() {
+        return this.Balance;
+    }
 
-    public long getShortPass() { return shortPass; }
-    public void setShortPass(long value) { this.shortPass = value; }
+    public void setBalance(String Balance) {
+        this.Balance = Balance;
+    }
 
-    public String getAggression() { return aggression; }
-    public void setAggression(String value) { this.aggression = value; }
+    public String getStrength() {
+        return this.Strength;
+    }
 
-    public long getBallControl() { return ballControl; }
-    public void setBallControl(long value) { this.ballControl = value; }
+    public void setStrength(String Strength) {
+        this.Strength = Strength;
+    }
 
-    public long getLongPass() { return longPass; }
-    public void setLongPass(long value) { this.longPass = value; }
+    public String getNational_Position() {
+        return this.National_Position;
+    }
 
-    public String getWorkRate() { return workRate; }
-    public void setWorkRate(String value) { this.workRate = value; }
+    public void setNational_Position(String National_Position) {
+        this.National_Position = National_Position;
+    }
 
-    public String getClub() { return club; }
-    public void setClub(String value) { this.club = value; }
+    public String getGK_Reflexes() {
+        return this.GK_Reflexes;
+    }
 
-    public String getPrefferedFoot() { return prefferedFoot; }
-    public void setPrefferedFoot(String value) { this.prefferedFoot = value; }
+    public void setGK_Reflexes(String GK_Reflexes) {
+        this.GK_Reflexes = GK_Reflexes;
+    }
 
-    public String getAgility() { return agility; }
-    public void setAgility(String value) { this.agility = value; }
+    public String getGK_Handling() {
+        return this.GK_Handling;
+    }
 
-    public String getClubJoining() { return clubJoining; }
-    public void setClubJoining(String value) { this.clubJoining = value; }
+    public void setGK_Handling(String GK_Handling) {
+        this.GK_Handling = GK_Handling;
+    }
 
-    public long getFinishing() { return finishing; }
-    public void setFinishing(long value) { this.finishing = value; }
+    public String getPath() {
+        return this.path;
+    }
 
-    public long getCurve() { return curve; }
-    public void setCurve(long value) { this.curve = value; }
+    public void setPath(String path) {
+        this.path = path;
+    }
 
-    public String getSlidingTackle() { return slidingTackle; }
-    public void setSlidingTackle(String value) { this.slidingTackle = value; }
+    public String getClub_Kit() {
+        return this.Club_Kit;
+    }
 
-    public String getMessage() { return message; }
-    public void setMessage(String value) { this.message = value; }
+    public void setClub_Kit(String Club_Kit) {
+        this.Club_Kit = Club_Kit;
+    }
 
-    public long getSpeed() { return speed; }
-    public void setSpeed(long value) { this.speed = value; }
+    public String getVolleys() {
+        return this.Volleys;
+    }
 
-    public long getHeading() { return heading; }
-    public void setHeading(long value) { this.heading = value; }
+    public void setVolleys(String Volleys) {
+        this.Volleys = Volleys;
+    }
 
-    public String getContractExpiry() { return contractExpiry; }
-    public void setContractExpiry(String value) { this.contractExpiry = value; }
+    public String getPenalties() {
+        return this.Penalties;
+    }
 
-    public long getRating() { return rating; }
-    public void setRating(long value) { this.rating = value; }
+    public void setPenalties(String Penalties) {
+        this.Penalties = Penalties;
+    }
 
-    public String getMarking() { return marking; }
-    public void setMarking(String value) { this.marking = value; }
+    public String getBirth_Date() {
+        return this.Birth_Date;
+    }
 
-    public String getStamina() { return stamina; }
-    public void setStamina(String value) { this.stamina = value; }
+    public void setBirth_Date(String Birth_Date) {
+        this.Birth_Date = Birth_Date;
+    }
 
-    public String getAge() { return age; }
-    public void setAge(String value) { this.age = value; }
+    public String getGK_Diving() {
+        return this.GK_Diving;
+    }
 
-    public String getGkKicking() { return gkKicking; }
-    public void setGkKicking(String value) { this.gkKicking = value; }
+    public void setGK_Diving(String GK_Diving) {
+        this.GK_Diving = GK_Diving;
+    }
 
-    public long getLongShots() { return longShots; }
-    public void setLongShots(long value) { this.longShots = value; }
+    public String getDribbling() {
+        return this.Dribbling;
+    }
 
-    public String getJumping() { return jumping; }
-    public void setJumping(String value) { this.jumping = value; }
+    public void setDribbling(String Dribbling) {
+        this.Dribbling = Dribbling;
+    }
 
-    public String getPrefferedPosition() { return prefferedPosition; }
-    public void setPrefferedPosition(String value) { this.prefferedPosition = value; }
+    public String getStanding_Tackle() {
+        return this.Standing_Tackle;
+    }
 
-    public String getVersion() { return version; }
-    public void setVersion(String value) { this.version = value; }
+    public void setStanding_Tackle(String Standing_Tackle) {
+        this.Standing_Tackle = Standing_Tackle;
+    }
 
-    public String getHost() { return host; }
-    public void setHost(String value) { this.host = value; }
+    public String getNational_Kit() {
+        return this.National_Kit;
+    }
 
-    public String getClubPosition() { return clubPosition; }
-    public void setClubPosition(String value) { this.clubPosition = value; }
+    public void setNational_Kit(String National_Kit) {
+        this.National_Kit = National_Kit;
+    }
 
-    public long getCrossing() { return crossing; }
-    public void setCrossing(long value) { this.crossing = value; }
+    public String getAcceleration() {
+        return this.Acceleration;
+    }
 
-    public String getWeakFoot() { return weakFoot; }
-    public void setWeakFoot(String value) { this.weakFoot = value; }
+    public void setAcceleration(String Acceleration) {
+        this.Acceleration = Acceleration;
+    }
+
+    public String getShort_Pass() {
+        return this.Short_Pass;
+    }
+
+    public void setShort_Pass(String Short_Pass) {
+        this.Short_Pass = Short_Pass;
+    }
+
+    public String getAggression() {
+        return this.Aggression;
+    }
+
+    public void setAggression(String Aggression) {
+        this.Aggression = Aggression;
+    }
+
+    public String getBall_Control() {
+        return this.Ball_Control;
+    }
+
+    public void setBall_Control(String Ball_Control) {
+        this.Ball_Control = Ball_Control;
+    }
+
+    public String getLong_Pass() {
+        return this.Long_Pass;
+    }
+
+    public void setLong_Pass(String Long_Pass) {
+        this.Long_Pass = Long_Pass;
+    }
+
+    public String getWork_Rate() {
+        return this.Work_Rate;
+    }
+
+    public void setWork_Rate(String Work_Rate) {
+        this.Work_Rate = Work_Rate;
+    }
+
+    public String getClub() {
+        return this.Club;
+    }
+
+    public void setClub(String Club) {
+        this.Club = Club;
+    }
+
+    public String getPreffered_Foot() {
+        return this.Preffered_Foot;
+    }
+
+    public void setPreffered_Foot(String Preffered_Foot) {
+        this.Preffered_Foot = Preffered_Foot;
+    }
+
+    public String getAgility() {
+        return this.Agility;
+    }
+
+    public void setAgility(String Agility) {
+        this.Agility = Agility;
+    }
+
+    public String getClub_Joining() {
+        return this.Club_Joining;
+    }
+
+    public void setClub_Joining(String Club_Joining) {
+        this.Club_Joining = Club_Joining;
+    }
+
+    public String getFinishing() {
+        return this.Finishing;
+    }
+
+    public void setFinishing(String Finishing) {
+        this.Finishing = Finishing;
+    }
+
+    public String getCurve() {
+        return this.Curve;
+    }
+
+    public void setCurve(String Curve) {
+        this.Curve = Curve;
+    }
+
+    public String getSliding_Tackle() {
+        return this.Sliding_Tackle;
+    }
+
+    public void setSliding_Tackle(String Sliding_Tackle) {
+        this.Sliding_Tackle = Sliding_Tackle;
+    }
+
+    public String getMessage() {
+        return this.message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
+
+    public String getSpeed() {
+        return this.Speed;
+    }
+
+    public void setSpeed(String Speed) {
+        this.Speed = Speed;
+    }
+
+    public String getHeading() {
+        return this.Heading;
+    }
+
+    public void setHeading(String Heading) {
+        this.Heading = Heading;
+    }
+
+    public String getContract_Expiry() {
+        return this.Contract_Expiry;
+    }
+
+    public void setContract_Expiry(String Contract_Expiry) {
+        this.Contract_Expiry = Contract_Expiry;
+    }
+
+    public String getRating() {
+        return this.Rating;
+    }
+
+    public void setRating(String Rating) {
+        this.Rating = Rating;
+    }
+
+    public String getMarking() {
+        return this.Marking;
+    }
+
+    public void setMarking(String Marking) {
+        this.Marking = Marking;
+    }
+
+    public String getStamina() {
+        return this.Stamina;
+    }
+
+    public void setStamina(String Stamina) {
+        this.Stamina = Stamina;
+    }
+
+    public String getAge() {
+        return this.Age;
+    }
+
+    public void setAge(String Age) {
+        this.Age = Age;
+    }
+
+    public String getGK_Kicking() {
+        return this.GK_Kicking;
+    }
+
+    public void setGK_Kicking(String GK_Kicking) {
+        this.GK_Kicking = GK_Kicking;
+    }
+
+    public String getLong_Shots() {
+        return this.Long_Shots;
+    }
+
+    public void setLong_Shots(String Long_Shots) {
+        this.Long_Shots = Long_Shots;
+    }
+
+    public String getJumping() {
+        return this.Jumping;
+    }
+
+    public void setJumping(String Jumping) {
+        this.Jumping = Jumping;
+    }
+
+    public String getPreffered_Position() {
+        return this.Preffered_Position;
+    }
+
+    public void setPreffered_Position(String Preffered_Position) {
+        this.Preffered_Position = Preffered_Position;
+    }
+
+    public String getVersion() {
+        return this.version;
+    }
+
+    public void setVersion(String version) {
+        this.version = version;
+    }
+
+    public String getHost() {
+        return this.host;
+    }
+
+    public void setHost(String host) {
+        this.host = host;
+    }
+
+    public String getClub_Position() {
+        return this.Club_Position;
+    }
+
+    public void setClub_Position(String Club_Position) {
+        this.Club_Position = Club_Position;
+    }
+
+    public String getCrossing() {
+        return this.Crossing;
+    }
+
+    public void setCrossing(String Crossing) {
+        this.Crossing = Crossing;
+    }
+
+    public String getWeak_foot() {
+        return this.Weak_foot;
+    }
+
+    public void setWeak_foot(String Weak_foot) {
+        this.Weak_foot = Weak_foot;
+    }
+
+
+    
 }

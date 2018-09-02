@@ -13,7 +13,7 @@ public class Fifa17Player {
     private String nationalPosition;
 
     @JsonProperty("national_kit")
-    private long nationalKit;
+    private Long nationalKit;
 
     @JsonProperty("club")
     private String club;
@@ -22,7 +22,7 @@ public class Fifa17Player {
     private String clubPosition;
 
     @JsonProperty("club_kit")
-    private long clubKit;
+    private Long clubKit;
 
     @JsonProperty("club_joining")
     private String clubJoining;
@@ -187,11 +187,11 @@ public class Fifa17Player {
         this.nationalPosition = nationalPosition;
     }
 
-    public long getNationalKit() {
+    public Long getNationalKit() {
         return nationalKit;
     }
 
-    public void setNationalKit(long nationalKit) {
+    public void setNationalKit(Long nationalKit) {
         this.nationalKit = nationalKit;
     }
 
@@ -211,11 +211,11 @@ public class Fifa17Player {
         this.clubPosition = clubPosition;
     }
 
-    public long getClubKit() {
+    public Long getClubKit() {
         return clubKit;
     }
 
-    public void setClubKit(long clubKit) {
+    public void setClubKit(Long clubKit) {
         this.clubKit = clubKit;
     }
 
