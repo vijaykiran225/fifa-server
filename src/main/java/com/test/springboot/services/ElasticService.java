@@ -38,7 +38,10 @@ public class ElasticService {
             "}";
 
     public Response readData(String id){
-        WebTarget target= ClientBuilder.newBuilder().build().target(baseUrl).path("_search");
+        WebTarget target= ClientBuilder.newBuilder().build()
+                .target(baseUrl)
+                .path("_search")
+                .queryParam("filter_path", "took,hits.hits._id,hits.hits._source*");
 
         Response response = target
             .request(MediaType.APPLICATION_JSON_TYPE)
