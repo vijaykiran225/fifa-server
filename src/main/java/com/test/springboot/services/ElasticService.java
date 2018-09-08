@@ -2,7 +2,7 @@ package com.test.springboot.services;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
-
+import org.apache.commons.lang3.StringUtils; 
 import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.client.Entity;
 import javax.ws.rs.client.WebTarget;
@@ -30,6 +30,7 @@ public class ElasticService {
             "}";
 
     String nameSearch="{\n" +
+//            " \"from\" : <<REPLACE_FROM>>, \"size\" : <<REPLACE_SIZE>>,"+
             "  \"query\": {\n" +
             "    \"match\": {\n" +
             "      \"Name\": \"<<REPLACE>>\"\n" +
@@ -37,15 +38,17 @@ public class ElasticService {
             "  }\n" +
             "}";
 
-    public Response readData(String id){
+    public Response readData(String name){
         WebTarget target= ClientBuilder.newBuilder().build()
                 .target(baseUrl)
                 .path("_search")
-                .queryParam("filter_path", "took,hits.hits._id,hits.hits._source*");
+                .queryParam("filter_path", "took,hits.total,hits.hits._id,hits.hits._source*");
 
+        String x= StringUtils.isNotEmpty(name) ?nameSearch.replace("<<REPLACE>>",name) : "";
+        
         Response response = target
             .request(MediaType.APPLICATION_JSON_TYPE)
-            .post(Entity.json(nameSearch.replace("<<REPLACE>>",id)));
+            .post(Entity.json(x));
         return response;
     }
 }

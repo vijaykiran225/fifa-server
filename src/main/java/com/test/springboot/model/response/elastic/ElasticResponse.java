@@ -1,4 +1,4 @@
-package com.test.springboot.model;
+package com.test.springboot.model.response.elastic;
 
 
 public class ElasticResponse {
@@ -10,4 +10,12 @@ public class ElasticResponse {
 
     public Hits getHits() { return hits; }
     public void setHits(Hits value) { this.hits = value; }
+
+    @Override
+    public String toString() {
+        return "ElasticResponse{" +
+                "took=" + took +
+                ", hits=" + hits +
+                '}';
+    }
 }

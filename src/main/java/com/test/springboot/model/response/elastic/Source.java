@@ -1,10 +1,10 @@
 
-package com.test.springboot.model;
+package com.test.springboot.model.response.elastic;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
- * map
+ * mapCollection
  */
 public class Source {
 
@@ -589,6 +589,66 @@ public class Source {
         this.Weak_foot = Weak_foot;
     }
 
-
-    
+    @Override
+    public String toString() {
+        return "Source{" +
+                "Composure='" + Composure + '\'' +
+                ", Nationality='" + Nationality + '\'' +
+                ", timestamp='" + timestamp + '\'' +
+                ", Shot_Power='" + Shot_Power + '\'' +
+                ", Skill_Moves='" + Skill_Moves + '\'' +
+                ", Freekick_Accuracy='" + Freekick_Accuracy + '\'' +
+                ", GK_Positioning='" + GK_Positioning + '\'' +
+                ", Reactions='" + Reactions + '\'' +
+                ", Height='" + Height + '\'' +
+                ", Weight='" + Weight + '\'' +
+                ", Interceptions='" + Interceptions + '\'' +
+                ", Vision='" + Vision + '\'' +
+                ", Name='" + Name + '\'' +
+                ", Attacking_Position='" + Attacking_Position + '\'' +
+                ", Balance='" + Balance + '\'' +
+                ", Strength='" + Strength + '\'' +
+                ", National_Position='" + National_Position + '\'' +
+                ", GK_Reflexes='" + GK_Reflexes + '\'' +
+                ", GK_Handling='" + GK_Handling + '\'' +
+                ", path='" + path + '\'' +
+                ", Club_Kit='" + Club_Kit + '\'' +
+                ", Volleys='" + Volleys + '\'' +
+                ", Penalties='" + Penalties + '\'' +
+                ", Birth_Date='" + Birth_Date + '\'' +
+                ", GK_Diving='" + GK_Diving + '\'' +
+                ", Dribbling='" + Dribbling + '\'' +
+                ", Standing_Tackle='" + Standing_Tackle + '\'' +
+                ", National_Kit='" + National_Kit + '\'' +
+                ", Acceleration='" + Acceleration + '\'' +
+                ", Short_Pass='" + Short_Pass + '\'' +
+                ", Aggression='" + Aggression + '\'' +
+                ", Ball_Control='" + Ball_Control + '\'' +
+                ", Long_Pass='" + Long_Pass + '\'' +
+                ", Work_Rate='" + Work_Rate + '\'' +
+                ", Club='" + Club + '\'' +
+                ", Preffered_Foot='" + Preffered_Foot + '\'' +
+                ", Agility='" + Agility + '\'' +
+                ", Club_Joining='" + Club_Joining + '\'' +
+                ", Finishing='" + Finishing + '\'' +
+                ", Curve='" + Curve + '\'' +
+                ", Sliding_Tackle='" + Sliding_Tackle + '\'' +
+                ", Speed='" + Speed + '\'' +
+                ", Heading='" + Heading + '\'' +
+                ", Contract_Expiry='" + Contract_Expiry + '\'' +
+                ", Rating='" + Rating + '\'' +
+                ", Marking='" + Marking + '\'' +
+                ", Stamina='" + Stamina + '\'' +
+                ", Age='" + Age + '\'' +
+                ", GK_Kicking='" + GK_Kicking + '\'' +
+                ", Long_Shots='" + Long_Shots + '\'' +
+                ", Jumping='" + Jumping + '\'' +
+                ", Preffered_Position='" + Preffered_Position + '\'' +
+                ", version='" + version + '\'' +
+                ", host='" + host + '\'' +
+                ", Club_Position='" + Club_Position + '\'' +
+                ", Crossing='" + Crossing + '\'' +
+                ", Weak_foot='" + Weak_foot + '\'' +
+                '}';
+    }
 }

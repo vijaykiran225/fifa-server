@@ -1,7 +1,11 @@
-package com.test.springboot.model;
+package com.test.springboot.model.response;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import org.springframework.web.bind.annotation.ResponseBody;
 
+@ResponseBody
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Fifa17Player {
     @JsonProperty("name")
     private String name;
