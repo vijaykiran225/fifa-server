@@ -2,6 +2,7 @@ package com.vertx.eventbusdemo;
 
 import io.vertx.core.AbstractVerticle;
 import io.vertx.core.Vertx;
+import io.vertx.core.VertxOptions;
 import io.vertx.ext.web.Router;
 import io.vertx.ext.web.RoutingContext;
 
@@ -28,9 +29,23 @@ public class Consumer extends AbstractVerticle {
         String x = routingContext.pathParam("msg");
         routingContext.response().setStatusCode(200).end("done");
 
-        vertx.eventBus().send("chat",x,resp->{
+        vertx.eventBus().send("chat1",x,resp->{
             System.out.println("sent msg to client 2"+x + "--"+resp.succeeded());
         });
 
+    }
+
+    public static void main(String[] args) {
+        VertxOptions options = new VertxOptions().setClustered(true);
+        Vertx.clusteredVertx(options, resp->{
+
+            if (resp.succeeded()){
+                Vertx vertx = resp.result();
+                vertx.deployVerticle(new Consumer());
+            }
+            else {
+                resp.cause().printStackTrace();
+            }
+        });
     }
 }

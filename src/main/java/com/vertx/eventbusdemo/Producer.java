@@ -2,6 +2,7 @@ package com.vertx.eventbusdemo;
 
 import io.vertx.core.AbstractVerticle;
 import io.vertx.core.Vertx;
+import io.vertx.core.VertxOptions;
 import io.vertx.ext.web.Router;
 import io.vertx.ext.web.RoutingContext;
 
@@ -15,7 +16,7 @@ public class Producer extends AbstractVerticle {
         route.get("/client2/:msg").handler(this::sendMsg);
         vertx.createHttpServer().requestHandler(route::accept).listen(8092);
 
-        vertx.eventBus().consumer("chat").handler(x -> {
+        vertx.eventBus().consumer("chat1").handler(x -> {
             System.out.println("msg from client 1 is " + x.body());
             x.reply("ack");
         });
@@ -28,6 +29,19 @@ public class Producer extends AbstractVerticle {
 
         vertx.eventBus().send("chat",x,resp->{
             System.out.println("sent msg to client 1 "+x + "--"+resp.succeeded());
+        });
+    }
+
+    public static void main(String[] args) {
+        Vertx.clusteredVertx(new VertxOptions().setClustered(true),resp->{
+
+            if (resp.succeeded()){
+                Vertx vertx = resp.result();
+                vertx.deployVerticle(new Producer());
+            }
+            else {
+                resp.cause().printStackTrace();
+            }
         });
     }
 
