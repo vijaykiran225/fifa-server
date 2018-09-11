@@ -14,25 +14,10 @@ public class Consumer extends AbstractVerticle {
     @Override
     public void start() throws Exception {
 
-        Router route=Router.router(vertx);
-        route.get("/client1/:msg").handler(this::sendMsg);
-        vertx.createHttpServer().requestHandler(route::accept).listen(8091);
-
         vertx.eventBus().consumer("chat").handler(x -> {
-            System.out.println("msg from client 2 is " + x.body());
+            System.out.println("received msg from event bus client 2 is " + x.body());
             x.reply("ack");
         });
-    }
-
-    private void sendMsg(RoutingContext routingContext) {
-
-        String x = routingContext.pathParam("msg");
-        routingContext.response().setStatusCode(200).end("done");
-
-        vertx.eventBus().send("chat1",x,resp->{
-            System.out.println("sent msg to client 2"+x + "--"+resp.succeeded());
-        });
-
     }
 
     public static void main(String[] args) {

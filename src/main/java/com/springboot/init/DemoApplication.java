@@ -3,6 +3,7 @@ package com.springboot.init;
 import com.springboot.vertx.handler.VertXRequestHandler;
 import com.springboot.controllers.FIFA17ControllerVertX;
 import io.vertx.core.Vertx;
+import io.vertx.core.VertxOptions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -23,6 +24,6 @@ public class DemoApplication {
 	public void deployVerticles() {
 		Vertx vertx=Vertx.vertx();
 
-		vertx.deployVerticle(a, VertXRequestHandler.deployStatusHandler);
+		//vertx.deployVerticle(a, VertXRequestHandler.deployStatusHandler);
 	}
 }
