@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Hello CommonJS!</title>
+</head>
+<body>
+<div id="log"></div>
+
+	
+<script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+<script src="//cdn.jsdelivr.net/sockjs/1.0.0/sockjs.min.js"></script>
+<script src="node_modules/vertx3-eventbus-client/vertx-eventbus.js"></script>
+<script>
+	var myMap = {};
+  var eb = new EventBus('/eventbus/');
+
+  eb.onopen = function () {
+    eb.registerHandler('feed', function (err, msg) {
+    	console.log(msg.body.lang);
+    	if (myMap[msg.body.lang] === undefined){
+    			myMap[msg.body.lang]=1;
+    	}else{
+    	count=myMap[msg.body.lang];
+    		myMap[msg.body.lang]=count+1;
+    	}
+    	contentHTML='<table id="myTable"><tr><th>lang</th><th>count</th></tr>';
+    	for( var key in myMap){
+    		contentHTML+= "<tr><td>"+key+"</td><td>"+myMap[key]+"</td></tr>";
+    	}
+    	contentHTML+="</table>";
+    	console.log(contentHTML);
+       $('#log').html(contentHTML);
+    });
+
+    
+  };
+
+</script>
+</body>
+</html>

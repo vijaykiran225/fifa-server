@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>send msg</title>
+
+<script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+<script src="//cdn.jsdelivr.net/sockjs/1.0.0/sockjs.min.js"></script>
+<script src="node_modules/vertx3-eventbus-client/vertx-eventbus.js"></script>
+	<script type="text/javascript">
+  var eb = new EventBus('/eventbus/');
+  eb.onopen = function () {
+    eb.registerHandler("feed", function (err, msg) {
+      // $('#chat').append(msg.body + "\n");
+    });
+  };
+		function sendMsg() {
+				
+
+	var data={
+		lang: 'webPage',
+		content : 'webpage click'
+	}
+  eb.publish("feed", data);
+		}
+
+	</script>
+</head>
+<body>
+<button onclick="sendMsg();">Click it 
+</button>
+</body>
+</html>
