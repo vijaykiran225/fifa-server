@@ -1,4 +1,4 @@
-package com.vertx.eventbusdemo;
+package com.vertx.eventbus.pingpong;
 
 import io.vertx.core.AbstractVerticle;
 import io.vertx.core.Vertx;

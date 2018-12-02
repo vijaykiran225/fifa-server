@@ -3,6 +3,7 @@ package com.automation.func;
 import io.reactivex.Observable;
 
 import javax.ws.rs.NotFoundException;
+import java.util.concurrent.TimeUnit;
 
 public class Starter {
 
@@ -23,13 +24,15 @@ public class Starter {
         })
 
                 .map(Starter::step2)
+                .timeout(5,TimeUnit.SECONDS)
                 .map(Starter::step3)
+                .timeout(3,TimeUnit.SECONDS)
                 .map(Starter::step4)
-                .retry(3,e-> e.getMessage().equals("hello"))
+                .retry(3)
                 .blockingSubscribe(
                         Starter::step5,
                         err -> {
-                            throw new NotFoundException(); //throw skip exception if needed to skip tests
+                            System.err.println("received faliure");//throw skip exception if needed to skip tests
                         },
                         () -> System.out.println("all processing complete")); // done
 
@@ -58,7 +61,7 @@ public class Starter {
     private static String step2(String input) {
         System.out.println("at the start of method 2");
         try {
-            Thread.sleep(3000);
+            Thread.sleep(30000);
         } catch (InterruptedException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
@@ -70,16 +73,16 @@ public class Starter {
     private static String step3(String input) {
         System.out.println("at the start of method 3");
         try {
-            Thread.sleep(3000);
+            Thread.sleep(5000);
         } catch (InterruptedException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
-        System.out.println("about to throw exec");
-        throw new RuntimeException("hello");
-//
-//        System.out.println("at the end of method 3");
-//        return input + "some output from step 3";
+//        System.out.println("about to throw exec");
+//        throw new RuntimeException("hello");
+
+        System.out.println("at the end of method 3");
+        return input + "some output from step 3";
     }
 
     private static String step4(String input) {

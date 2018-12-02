@@ -1,13 +1,8 @@
-package com.vertx.eventbusdemo;
+package com.vertx.eventbus.pingpong;
 
 import io.vertx.core.AbstractVerticle;
 import io.vertx.core.Vertx;
 import io.vertx.core.VertxOptions;
-import io.vertx.ext.web.Router;
-import io.vertx.ext.web.RoutingContext;
-
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
 
 public class Consumer extends AbstractVerticle {
 
